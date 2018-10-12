@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+	<!-- Constructor Injection -->
+	<bean id="gr1" class="com.learn.models.Greeting">
+		<constructor-arg name="message" value="Hello All Const Dep Injec"></constructor-arg>
+	</bean>
+	
+	<bean id="gr2" class="com.learn.models.Greeting">
+		<property name="message" value="Hello All Prop(Setter) Dep Injec"></property>
+	</bean>
+	
+</beans>

@@ -1,0 +1,18 @@
+package com.learn.controllers;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+
+@Controller
+public class GreetingController {
+
+	public String printMorningGreeting(ModelMap modelMap) {
+		modelMap.addAttribute("welcomeMsg","Hello All <I>Good Morning </I>");
+		return "morning-message";
+	}
+	
+	public String printEveningGreeting(ModelMap modelMap) {
+		modelMap.addAttribute("welcomeMsg","Hello All <I>Good Evening </I>");
+		return "evening-message";
+	}
+}

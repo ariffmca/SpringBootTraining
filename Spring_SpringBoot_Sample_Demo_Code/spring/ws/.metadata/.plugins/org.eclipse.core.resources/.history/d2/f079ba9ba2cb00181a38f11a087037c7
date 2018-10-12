@@ -1,0 +1,37 @@
+package com.learn.daos.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+
+import com.learn.daos.StudentDAO;
+import com.learn.models.Student;
+
+public class StudentDAOImpl implements StudentDAO {
+
+	@Autowired
+	private JdbcTemplate jdbcTemplate; 
+	private static int id =1;
+	
+	@Override
+	public void create(String name, Integer age, Integer marks, String year) {
+		final String  insertStudentSQL = "insert into student (id,name,age) values (?,?,?)";
+		final String  insertMarksSQL = "insert into marks (id,marks,year) values (?,?,?)";
+		
+		jdbcTemplate.update(insertStudentSQL, id, name, age);
+		System.out.println("Inserted succesfullly in Student Table");
+		
+		jdbcTemplate.update(insertMarksSQL, id, mar, age);
+		System.out.println("Inserted succesfullly in Student Table");
+	}
+	}
+	
+
+	@Override
+	public List<Student> listStudents() {
+
+		return null;
+	}
+
+}

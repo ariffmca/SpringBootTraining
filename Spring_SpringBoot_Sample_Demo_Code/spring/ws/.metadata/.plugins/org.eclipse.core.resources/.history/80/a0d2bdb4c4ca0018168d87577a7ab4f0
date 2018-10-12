@@ -1,0 +1,21 @@
+package com.learn.test;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.learn.models.Greeting;
+
+public class TestGreeting {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ApplicationContext appCtx = new ClassPathXmlApplicationContext("./beans.xml");
+
+		Greeting gr1 = (Greeting)appCtx.getBean("gr1");
+		System.out.println(gr1);
+		
+		Greeting gr2 = (Greeting)appCtx.getBean("gr2");
+		System.out.println(gr2);
+	}
+
+}

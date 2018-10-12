@@ -1,0 +1,44 @@
+package com.learn.aspects;
+
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.AfterThrowing;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+
+@Aspect
+public class LoggingAspectJ {
+	
+	@Before(value = "beforeAdvice")
+	public void beforeAdvice() {
+		System.out.println("+++ Before Advice +++");
+	}
+	
+	@After(value = "afterAdvice")
+	public void afterAdvice() {
+		System.out.println("+++ After Advice +++");
+	}
+	
+	@AfterReturning(returning="retVal")
+	public void afterReturningAdvice(Object retVal) {
+		System.out.println("+++ After Returning Advice ::" + retVal.toString());
+	}
+	
+	@AfterThrowing(throwing="ex")
+	public void afterThrowingAdvice(IllegalArgumentException ex) {
+		System.out.println("+++ After Throwing Advice ::" + ex.toString());
+	}
+	
+	/*public Object aroundAdvice(ProceedingJoinPoint joinPoint) throws Throwable {
+		Object obj = null;
+		System.out.println("+++ Around Advice - Before" + joinPoint.getSignature());
+		try {
+			obj = joinPoint.proceed();
+			System.out.println("Around Advice - After" + joinPoint.getSignature());
+		} catch (Throwable e) {
+			throw e;
+		}
+		return obj;
+	}*/
+}

@@ -1,0 +1,5 @@
+package com.learn.facades;
+
+public class EmployeeFacade {
+
+}

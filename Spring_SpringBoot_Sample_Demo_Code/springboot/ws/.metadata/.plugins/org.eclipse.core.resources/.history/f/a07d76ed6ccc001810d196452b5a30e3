@@ -1,0 +1,40 @@
+package com.learn.daos.impl;
+
+import java.util.List;
+
+import com.learn.daos.TopicDAO;
+import com.learn.models.Topic;
+
+public class TopicDAOImpl implements TopicDAO {
+
+	@Override
+	public List<Topic> getAllTopics() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void addTopic(Topic topic) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void updateTopic(String id, Topic topic) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public Topic getTopic(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deleteTopic(String id) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

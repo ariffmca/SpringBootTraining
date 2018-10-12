@@ -1,0 +1,11 @@
+package com.learn.controllers;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class HelloController {
+	
+	public String sayHi() {
+		return "Hello Ariff...Its time for lunch !!!";
+	}
+}

@@ -1,0 +1,9 @@
+package com.learn.models;
+
+public class Greeting {
+
+	public Greeting() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

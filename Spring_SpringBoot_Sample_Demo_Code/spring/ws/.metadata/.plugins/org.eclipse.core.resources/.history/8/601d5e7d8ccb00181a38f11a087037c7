@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+
+	<bean id="logging" class="com.learn.aspects.LoggingAspect" />
+	
+	<aop:config>
+		<aop:aspect id="loggingAspect" ref="logging">
+			<aop:pointcut expression="execution(* com.learn.models.*.*(..)" 
+						id="allMethodsPointCut"/>
+						
+			<aop:before 		 method="beforeAdvice" 			pointcut-ref="allMethodsPointCut"/>
+			<aop:after 			 method="afterAdvice" 			pointcut-ref="allMethodsPointCut"/>
+			<aop:after-returning method="afterReturningAdvice"  pointcut-ref="allMethodsPointCut"/>
+			<aop:after-throwing  method="afterThrowingAdvice"   pointcut-ref="allMethodsPointCut"/>
+			<aop:around			 method="aroundAdvice" 			pointcut-ref="allMethodsPointCut"/>
+			
+		</aop:aspect>
+	</aop:config>
+	
+</beans>

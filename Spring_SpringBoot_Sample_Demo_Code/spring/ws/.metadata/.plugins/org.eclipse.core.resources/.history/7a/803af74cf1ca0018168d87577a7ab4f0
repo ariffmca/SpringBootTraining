@@ -1,0 +1,17 @@
+package com.learn.facades;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.learn.services.EmployeeService;
+
+public class EmployeeFacade {
+
+	@Autowired
+	private EmployeeService empService;
+
+	public void addEmployee() {
+		System.out.println("Employee added :: Facade Call");
+		empService.addEmployee();
+	}
+
+}

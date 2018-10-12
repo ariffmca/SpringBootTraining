@@ -1,0 +1,9 @@
+package com.learn.aspects;
+
+public class LoggingAspect {
+
+	public LoggingAspect() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

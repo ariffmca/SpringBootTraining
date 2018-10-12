@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+
+	<bean id="logging" class="com.ameya.aspects.LoggingAspect"/>
+	<!-- 
+		otherMethod is to be configured as before advice for all
+		employee methods demonstrating multiple pointcuts
+		and multiple before advices within a aspect
+	 -->
+	<aop:config>
+		<aop:aspect id="loggingAspect" ref="logging">
+			<aop:pointcut expression="execution(* com.ameya.models.*.*(..))" 
+			id="allMethodsPointcut"/>
+			<aop:pointcut 
+			expression="execution(* com.ameya.models.Employee.*(..))" 
+			id="testPointcut"/>
+			
+			<aop:before method="beforeAdvice" pointcut-ref="allMethodsPointcut"/>
+			<aop:before method="otherMethod" pointcut-ref="testPointcut"/>
+			<aop:after method="afterAdvice" pointcut-ref="allMethodsPointcut"/>
+			<aop:after-returning method="afterReturningAdvice" 
+			returning="retVal" pointcut-ref="allMethodsPointcut"/>
+			<aop:after-throwing method="afterThrowingAdvice" 
+			throwing="ex" pointcut-ref="allMethodsPointcut"/>
+			<aop:around method="aroundAdvice" pointcut-ref="allMethodsPointcut"/>
+		</aop:aspect>
+	</aop:config>
+	<bean id="e1" class="com.ameya.models.Employee">
+		<property name="age" value="41"/>
+		<property name="firstName" value="Ameya"/>
+		<property name="lastName" value="Joshi"/>
+		<property name="salary" value="40000"/>
+	</bean>
+</beans>

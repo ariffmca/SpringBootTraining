@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="SpringBootMVCCRUDDemo"/>
+<aop-project name="006-demoMvcSecurityJdbc"/>
+<aop-project name="009-SpringCloudConfigServer"/>
+<aop-project name="SpringBootJdbcDemo"/>
+<aop-project name="002-EmpCrudService"/>
+<aop-project name="SpringBootDemo"/>
+<aop-project name="SpringBootSecurityWebDemo"/>
+<aop-project name="SpringBootSecurityMVCDemo"/>
+<aop-project name="009-SpringCloudConfigClient"/>
+<aop-project name="SpringBootCRUDDemo"/>
+</aop-reference-model>

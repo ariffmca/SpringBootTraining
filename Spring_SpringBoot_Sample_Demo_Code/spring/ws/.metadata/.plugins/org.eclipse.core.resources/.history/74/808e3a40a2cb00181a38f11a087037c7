@@ -1,0 +1,22 @@
+package com.learn.daos.impl;
+
+import java.util.List;
+
+import com.learn.daos.StudentDAO;
+import com.learn.models.Student;
+
+public class StudentDAOImpl implements StudentDAO {
+
+	@Override
+	public void create(String name, Integer age, String year) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public List<Student> listStudents() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

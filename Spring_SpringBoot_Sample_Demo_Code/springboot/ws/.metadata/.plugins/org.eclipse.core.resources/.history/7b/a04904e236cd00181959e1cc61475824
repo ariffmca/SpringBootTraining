@@ -1,0 +1,5 @@
+package com.learn.configurations;
+
+public class SecurityConfig {
+
+}

@@ -1,0 +1,16 @@
+package com.training.daos;
+
+public class Employee {
+
+	private Integer id;
+	private String firstName;
+	private String lastName;
+	private String deptName;
+	private String email;
+	
+	//Project Table
+	private Integer empid;
+	private String projName;
+	private Integer teamSize;
+	private Integer days;
+}

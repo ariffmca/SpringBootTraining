@@ -1,0 +1,29 @@
+package com.learn.test;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.learn.daos.StudentDAO;
+import com.learn.models.Employee;
+
+public class TestJdbcXml {
+
+	public static void main(String[] args) {
+		
+		ApplicationContext appCtx = new ClassPathXmlApplicationContext("beans.xml");
+		StudentDAO studenDao = (StudentDAO)appCtx.getBean("studentDao");
+		studenDao.create("Ariff1", 30, 75, "2016");
+		
+		/*studenDao.create("Ariff1", 30, 75, "2016");
+		studenDao.create("Ariff2", 30, 75, "2017");
+		studenDao.create("Ariff3", 30, 75, "2018");
+		studenDao.create("Ariff4", 30, 75, "2019");
+		studenDao.create("Ariff5", 30, 75, "2020");
+		*/
+
+		/*studenDao.listStudents().forEach
+			(s -> System.out.println("Student Name : " + s.getName()));*/
+		
+	}
+
+}

@@ -1,0 +1,7 @@
+INDEX VERSION 1.131
+D:\verizon\springboot\ws\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\320556125.index
+\SpringBootMVCCRUDDemo\src\main\java
+D:\verizon\springboot\ws\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3851516778.index
+\SpringBootSecurityWebDemo\src\main\java
+D:\verizon\springboot\ws\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2348858834.index
+\006-demoMvcSecurityJdbc\src\main\java

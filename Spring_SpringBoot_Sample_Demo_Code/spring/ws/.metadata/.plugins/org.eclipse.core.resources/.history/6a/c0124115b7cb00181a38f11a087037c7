@@ -1,0 +1,37 @@
+package com.training.daos.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.training.daos.EmployeeDAO;
+import com.training.services.Employee;
+
+@Repository
+@Transactional(propagation=Propagation.MANDATORY,isolation=Isolation.DEFAULT)
+public class EmployeeDAOImpl implements EmployeeDAO {
+
+	@Autowired
+	JdbcTemplate jdbcTempleate = new JdbcTemplate();
+	
+	private static int id = 1;
+	
+	@Override
+	public void create(String firstName, String lastName, String deptName, String email, String projName,
+			Integer teamSize, Integer days) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public List<Employee> listEmployee() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

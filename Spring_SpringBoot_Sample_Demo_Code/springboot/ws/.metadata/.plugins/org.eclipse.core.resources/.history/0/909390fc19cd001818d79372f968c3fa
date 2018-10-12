@@ -1,0 +1,32 @@
+package com.learn.controllers;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.learn.models.Employee;
+import com.learn.services.EmployeeService;
+
+@Controller
+public class EmployeeController {
+
+	@Autowired
+	private EmployeeService empService;
+	
+	@RequestMapping("/")
+	public String homePage() {
+		return "index";
+	}
+	
+
+	@RequestMapping("/")
+	public ModelAndView login(ModelMap modelmap) {
+		ModelAndView mav = new ModelAndView();
+		modelmap.addAttribute("employee", new Employee());
+		mav.setViewName("login");
+		return mav;
+	}
+	
+}

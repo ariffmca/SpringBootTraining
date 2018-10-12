@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="conn1" class="com.learn.models.JdbcDAOImpl">
+		<property name="driverClass" value="com.driver.db2driver"></property>
+		<property name="connURL" value="localhost:8080/mysql"></property>
+		<property name="dbUserName" value="admin"></property>
+		<property name="dbPassword" value="password"></property>
+		<property name="maxConn" value="5"></property>
+	</bean>
+	
+	<bean id="conn2" class="com.learn.models.JdbcDAOImpl">
+		<property name="driverClass" value="com.driver.db2driver"></property>
+		<property name="connURL" value="localhost:8080/mysql"></property>
+		<property name="dbUserName" value="admin2"></property>
+		<property name="dbPassword" value="password"></property>
+		<property name="maxConn" value="5"></property>
+	</bean>
+	
+	<bean id="conn3" class="com.learn.models.JdbcDAOImpl">
+		<property name="driverClass" value="com.driver.db2driver"></property>
+		<property name="connURL" value="localhost:8080/mysql"></property>
+		<property name="dbUserName" value="admin3"></property>
+		<property name="dbPassword" value="password"></property>
+		<property name="maxConn" value="5"></property>
+	</bean>
+</beans>
+
+

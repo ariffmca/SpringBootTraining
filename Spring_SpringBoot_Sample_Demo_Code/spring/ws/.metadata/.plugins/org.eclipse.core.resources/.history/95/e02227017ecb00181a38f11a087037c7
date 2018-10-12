@@ -1,0 +1,9 @@
+package com.learn.configs;
+
+public class GreetingConfiguration {
+
+	public GreetingConfiguration() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

@@ -1,0 +1,56 @@
+package com.learn.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.learn.models.Employee;
+import com.learn.services.EmployeeService;
+
+@RestController
+public class EmployeeController {
+
+	@Autowired
+	private EmployeeService empService;
+	
+	@GetMapping("/employees")
+	public List<Employee> getAllEmployee(){
+		return empService.getAllEmployee();
+		
+	}
+	
+	@GetMapping("/employees/{empId}")
+	public Employee getEmployee(@PathVariable Integer empId){
+		return empService.getEmployee(empId);
+		
+	}
+	
+	@PostMapping("/employees")
+	public String addEmployee(@RequestBody Employee employee) {
+		return empService.addEmployee(employee);
+	}
+	
+	@PutMapping("/employees/{empId}")
+	public String updateEmployee(@RequestBody Employee employee,
+					@PathVariable Integer empId){
+		return empService.updateEmployee(empId, employee);
+	}
+	
+	@DeleteMapping("/employees")
+	public String deleteEmployee(@PathVariable Integer empId){
+		return empService.deleteEmployee(empId);
+	}
+	
+	@GetMapping("/employees/byfirstname/{empId}")
+	public Employee getByFirstName(@PathVariable String firstName){
+		return empService.getByFirstName(firstName);
+		
+	}
+}

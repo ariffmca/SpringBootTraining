@@ -1,0 +1,9 @@
+package com.learn.test;
+
+public class TestJavaBasedDI {
+
+	public TestJavaBasedDI() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

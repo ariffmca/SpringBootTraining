@@ -1,0 +1,22 @@
+package com.learn.controllers;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+
+@Controller
+@RequestMapping("/")
+public class AppController {
+
+	@RequestMapping(value= {"/","/home"})
+	public String homePage(ModelMap model) {
+		model.addAttribute("greeting","Hi, Welcome to SpringBoot Site");
+		return "welcome";
+	}
+	
+	@RequestMapping("/login")
+	public String loginPage() {
+		return "login";
+	}
+}

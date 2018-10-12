@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+<!-- 	<!-- Constructor Injection -->
+	<bean id="gr1" class="com.learn.models.Greeting">
+		<constructor-arg name="message" value="Hello All - Const Dep Injec"></constructor-arg>
+	</bean>
+	
+	Setter Injection
+	<bean id="gr2" class="com.learn.models.Greeting">
+		<property name="message" value="Hello All - Setter Dep Injec"></property>
+	</bean>
+	
+	Property Injection - Values from Property files
+	<bean id="gr3" class="com.learn.models.Greeting">
+		<property name="message" value="${msg.message}"></property>
+	</bean>
+	
+	Mapping Property file location
+	<bean id="msgProps" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location" value="classpath:msg.properties"></property>
+	</bean>
+	
+	Property Injection - Values from Property files  using namespace
+	<bean id="gr4" class="com.learn.models.Greeting"
+				p:message="Display name using namespace"/>
+
+	<bean id="gr5" class="com.learn.models.Greeting"
+				c:message="constructor value using namespace"/>
+	
+	<bean id="gr6" class="com.learn.models.Greeting" init-method="init" destroy-method="destroy">
+		<property name="message" value="init/destroy test"></property>
+	</bean>
+				
+	<bean class="com.learn.postprocessor.CustomPostProcessor"/>	 -->		
+	
+	<bean id="gr7" class="com.learn.models.Greeting" factory-method="create" />
+	
+			
+</beans>

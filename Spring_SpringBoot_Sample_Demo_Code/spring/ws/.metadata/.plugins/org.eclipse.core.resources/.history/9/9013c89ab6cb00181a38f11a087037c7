@@ -1,0 +1,23 @@
+package com.training.daos.impl;
+
+import java.util.List;
+
+import com.training.daos.EmployeeDAO;
+import com.training.services.Employee;
+
+public class EmployeeDAOImpl implements EmployeeDAO {
+
+	@Override
+	public void create(String firstName, String lastName, String deptName, String email, String projName,
+			Integer teamSize, Integer days) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public List<Employee> listEmployee() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

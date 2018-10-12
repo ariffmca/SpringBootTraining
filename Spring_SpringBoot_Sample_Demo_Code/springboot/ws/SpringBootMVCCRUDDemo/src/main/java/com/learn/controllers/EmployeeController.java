@@ -1,0 +1,88 @@
+package com.learn.controllers;
+
+import java.util.List;
+
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.learn.models.Employee;
+import com.learn.services.EmployeeService;
+
+@Controller
+public class EmployeeController {
+
+	@Autowired
+	private EmployeeService empService;
+	
+	@RequestMapping("/")
+	public String homePage() {
+		return "index";
+	}
+	
+
+	@RequestMapping("/login")
+	public ModelAndView login(ModelMap modelMap) {
+		
+		ModelAndView mav = new ModelAndView();
+		modelMap.addAttribute("employee", new Employee());
+		mav.setViewName("login");
+		
+		return mav;
+	}
+	
+	@RequestMapping("/showoptions")
+	public ModelAndView showOptions(@ModelAttribute("employee") Employee employee,
+			ModelMap modelMap, HttpSession httpSession) {
+		
+		ModelAndView mav = new ModelAndView();
+		httpSession.setAttribute("userName", employee.getUserName());
+		modelMap.addAttribute(employee);
+		mav.setViewName("showoptions");
+		
+		return mav;
+	}
+	
+	@RequestMapping("/addEmployee")
+	public ModelAndView addEmployee(@ModelAttribute("employee") Employee employee,
+			ModelMap modelMap, HttpSession httpSession) {
+		
+		ModelAndView mav = new ModelAndView();
+		modelMap.addAttribute("employee", employee);
+		mav.setViewName("addemployee");
+		return mav;
+	}
+	
+	
+	@RequestMapping(value="/saveEmployee", method=RequestMethod.POST)
+	public ModelAndView saveEmployee(@ModelAttribute("employee") Employee employee,
+			ModelMap modelMap) {
+		
+		ModelAndView mav = new ModelAndView();
+		empService.addEmployee(employee);
+		modelMap.addAttribute("employeeId", employee.getEmpId());
+		modelMap.addAttribute("firstName", employee.getFirstName());
+		modelMap.addAttribute("lastName", employee.getLastName());
+		modelMap.addAttribute("salary", employee.getSalary());
+		
+		mav.setViewName("employee-added");
+		return mav;
+	}
+	
+	@RequestMapping("/viewAll")
+	public ModelAndView viewAll(ModelMap modelMap) {
+		
+		ModelAndView mav = new ModelAndView();
+		List<Employee> empList = empService.getAllEmployee();
+		modelMap.addAttribute("empList", empList);
+		mav.setViewName("viewall");
+		return mav;
+	}
+	
+}

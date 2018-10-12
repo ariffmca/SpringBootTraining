@@ -1,0 +1,8 @@
+package com.learn.dao;
+
+public class EmployeeDAO {
+
+	public void createEmployee() {
+		System.out.println("Employee Created--DAO");
+	}
+}
